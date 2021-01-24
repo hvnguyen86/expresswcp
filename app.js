@@ -25,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/users', usersRouter);
 
 app.get('*', function(req, res) {
+	console.log(req.headers);
 	res.sendFile("static/index.html",{ root : __dirname});
 });
 
