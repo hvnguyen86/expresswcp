@@ -28,10 +28,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/contact', function(req, res) {
 	res.sendFile("static/contact.html",{ root : __dirname});
+	console.log(req.query);
 });
 
 app.post('/contact', function(req, res) {
 	res.sendFile("static/post_contact.html",{ root : __dirname});
+	console.log(req.query);
 });
 
 app.get('/', function(req, res) {
