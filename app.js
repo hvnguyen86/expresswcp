@@ -15,7 +15,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(methodOverride('X-Method-Override',{methods: ["POST","GET"]}));
-app.use(methodOverride('X-HTTP-Method-Override',{methods: ["POST","GET"]}));
+//app.use(methodOverride('X-HTTP-Method-Override',{methods: ["POST","GET"]}));
 app.use(methodOverride('_method',{methods: ["POST","GET"]}));
 app.use(logger('tiny'));
 app.use(express.json());
