@@ -33,7 +33,7 @@
     </style>
 
     
-   
+
   </head>
   <body class="d-flex h-100 text-center text-white bg-dark">
     
@@ -42,25 +42,45 @@
     <div>
       <h3 class="float-md-start mb-0">Secure Website</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="/contact">Contact</a>
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link active" aria-current="page" href="/contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main class="px-3">
-    <h1>This is a secure and invulnerable Website.</h1>
-    <p class="lead">The Web as I envisaged it, we have not seen it yet. The future is still so much bigger than the past.</p>
-    <!-- <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
-    </p> -->
+    <form id="form" method="GET" action="/contact">
+    <input type="hidden" name="_method" value="POST">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required>
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">Full Name</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+      <div id="nameHelp" class="form-text">Please provide your full name</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Message</label>
+      <textarea name="message" class="form-control" id="" cols="30" rows="10" required></textarea>
+    </div>
+    
+    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+  </form>
   </main>
 
   <footer class="mt-auto text-white-50">
     <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
   </footer>
 </div>
+<script>
 
+// document.getElementById("submit").addEventListener("click", function(event){
+//   event.preventDefault();
+//   console.log("test");
+// });
+</script>
 
     
   </body>

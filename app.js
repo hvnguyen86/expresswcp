@@ -15,6 +15,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(methodOverride('X-Method-Override',{methods: ["POST","GET"]}));
+app.use(methodOverride('X-HTTP-Method-Override',{methods: ["POST","GET"]}));
+app.use(methodOverride('_method',{methods: ["POST","GET"]}));
 app.use(logger('tiny'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -24,10 +26,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
 
-app.get('*', function(req, res) {
-	console.log(req.headers);
+app.get('/contact', function(req, res) {
+	res.sendFile("static/contact.html",{ root : __dirname});
+});
+
+app.post('/contact', function(req, res) {
+	res.sendFile("static/post_contact.html",{ root : __dirname});
+});
+
+app.get('/', function(req, res) {
 	res.sendFile("static/index.html",{ root : __dirname});
 });
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
